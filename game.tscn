@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c76oikpeumlwq"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_kpjse"]
-[ext_resource type="Script" path="res://lines.gd" id="2_pjueh"]
+[ext_resource type="PackedScene" uid="uid://5qx5omiil4hm" path="res://connector.tscn" id="2_om43p"]
 [ext_resource type="PackedScene" uid="uid://cdbkjauenkwog" path="res://dot.tscn" id="3_k8yck"]
 
 [node name="main" type="Node"]
@@ -9,8 +9,8 @@ script = ExtResource("1_kpjse")
 columns = 4
 rows = 8
 
-[node name="connector" type="Node2D" parent="."]
-script = ExtResource("2_pjueh")
+[node name="Connector" parent="." instance=ExtResource("2_om43p")]
 
 [node name="dot" parent="." instance=ExtResource("3_k8yck")]
 visible = false
+position = Vector2(-219.369, 24.3543)
