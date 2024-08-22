@@ -6,8 +6,8 @@
 
 [node name="main" type="Node"]
 script = ExtResource("1_kpjse")
-columns = 4
-rows = 8
+columns = 2
+rows = 2
 
 [node name="Connector" parent="." instance=ExtResource("2_om43p")]
 

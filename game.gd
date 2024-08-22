@@ -1,6 +1,7 @@
 extends Node
 var dot = preload("res://dot.tscn")
 var connector = preload("res://connector.tscn")
+var connection = connector.instantiate()
 @export var columns :int 
 @export var rows : int 
 @export var dot_distance:int = 150
@@ -17,10 +18,11 @@ func _ready():
 	var x_pos = 150
 	var y_pos = 150
 	for c in range(columns):
+		print(rows)
 		for row in range(rows):
 			var next_dot = dot.instantiate()
-			var connection = connector.instantiate()
-			add_child(connection)
+			#var connection = connector.instantiate()
+			#add_child(connection)
 			next_dot.position = Vector2(x_pos,y_pos)
 			next_dot.start_connection.connect(connection._on_dot_start_connection)
 			next_dot.end_connection.connect(connection._on_dot_end_connection)
