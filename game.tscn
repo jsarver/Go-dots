@@ -6,10 +6,12 @@
 
 [node name="main" type="Node"]
 script = ExtResource("1_kpjse")
-columns = 2
-rows = 2
+columns = 8
+rows = 8
 
 [node name="Connector" parent="." instance=ExtResource("2_om43p")]
+
+[node name="Node2D" parent="Connector" instance=ExtResource("2_om43p")]
 
 [node name="dot" parent="." instance=ExtResource("3_k8yck")]
 visible = false
