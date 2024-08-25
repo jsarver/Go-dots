@@ -29,7 +29,7 @@ func _ready():
 		x_pos += dot_distance
 		y_pos = dot_distance
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if not current_line:
 			pass
