@@ -13,14 +13,12 @@ var end : Vector2
 	#for "res://dot.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var x_pos = 150
-	var y_pos = 150
+	var x_pos = dot_distance
+	var y_pos = dot_distance
 	for c in range(columns):
 		print(rows)
 		for row in range(rows):
 			var next_dot = dot.instantiate()
-			#var connection = connector.instantiate()
-			#add_child(connection)
 			next_dot.position = Vector2(x_pos,y_pos)
 			next_dot.start_connection.connect(_on_dot_start_connection)
 			next_dot.end_connection.connect(_on_dot_end_connection)
@@ -35,7 +33,6 @@ func _process(_delta):
 			pass
 		else:
 			current_line.set_point_position(1, get_viewport().get_mouse_position())
-			print('drawing',end)
 		
 
 func _on_dot_end_connection(position):
