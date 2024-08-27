@@ -43,7 +43,6 @@ func _on_dot_end_connection(position):
 func _on_dot_start_connection(position):
 	current_line = Line2D.new()
 	add_child(current_line)
-	print('start connection',position)
 	start = position
 	end = position
 	current_line.points= PackedVector2Array([start,end])
