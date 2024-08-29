@@ -15,14 +15,17 @@ signal end_connection (end_position)
 #
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if get_rect().has_point(to_local(event.position)):
+	
+		if is_pixel_opaque(get_local_mouse_position()):
+			prints("global",event.position)
+			prints("local", to_local(event.position))
 			start_connection.emit(self.position)
 			self.state = 'active'
 			queue_redraw()
 			
 	if event is InputEventMouseButton and event.is_released() and event.button_index == MOUSE_BUTTON_LEFT:
 		
-		if get_rect().has_point(to_local(event.position)):
+		if is_pixel_opaque(get_local_mouse_position()):
 			print('emitting!',self.position)
 			end_connection.emit(self.position)
 			state = 'active'

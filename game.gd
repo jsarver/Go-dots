@@ -1,3 +1,5 @@
+@tool
+
 extends Node
 var dot = preload("res://dot.tscn")
 var connector = preload("res://connector.tscn")

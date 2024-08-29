@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c76oikpeumlwq"]
+[gd_scene load_steps=6 format=3 uid="uid://c76oikpeumlwq"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_kpjse"]
 [ext_resource type="PackedScene" uid="uid://5qx5omiil4hm" path="res://connector.tscn" id="2_om43p"]
 [ext_resource type="PackedScene" uid="uid://cdbkjauenkwog" path="res://dot.tscn" id="3_k8yck"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="4_mja6a"]
+[ext_resource type="Script" path="res://Label.gd" id="5_2mcjc"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_kpjse")
@@ -17,3 +19,24 @@ dot_distance = 100
 [node name="dot" parent="." instance=ExtResource("3_k8yck")]
 visible = false
 position = Vector2(-219.369, 24.3543)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 542)
+script = ExtResource("4_mja6a")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 2.0
+offset_right = 176.0
+offset_bottom = 45.0
+text = "test	"
+script = ExtResource("5_2mcjc")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 240.0
+offset_top = 2.0
+offset_right = 392.0
+offset_bottom = 45.0
+text = "test	"
+script = ExtResource("5_2mcjc")
+event_name = "Mouse Wheel Down"
