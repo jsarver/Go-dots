@@ -10,7 +10,7 @@
 script = ExtResource("1_kpjse")
 columns = 48
 rows = 48
-dot_distance = 100
+dot_distance = 100.0
 
 [node name="Connector" parent="." instance=ExtResource("2_om43p")]
 

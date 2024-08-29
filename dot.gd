@@ -17,8 +17,6 @@ func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 	
 		if is_pixel_opaque(get_local_mouse_position()):
-			prints("global",event.position)
-			prints("local", to_local(event.position))
 			start_connection.emit(self.position)
 			self.state = 'active'
 			queue_redraw()
@@ -26,12 +24,12 @@ func _input(event):
 	if event is InputEventMouseButton and event.is_released() and event.button_index == MOUSE_BUTTON_LEFT:
 		
 		if is_pixel_opaque(get_local_mouse_position()):
-			print('emitting!',self.position)
+			#print('emitting!',self.position)
 			end_connection.emit(self.position)
 			state = 'active'
 			queue_redraw()
 
 func _draw():
-	print('drawing')
+	#print('drawing')
 	draw_circle(Vector2(current_position), 29.3905, color)
 

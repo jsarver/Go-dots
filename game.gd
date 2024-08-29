@@ -6,7 +6,8 @@ var connector = preload("res://connector.tscn")
 var connection = connector.instantiate()
 @export var columns :int 
 @export var rows : int 
-@export var dot_distance:int = 150
+@export var dot_distance:float = 150
+@onready var max_length = dot_distance
 var current_line : Line2D
 var start : Vector2
 var end : Vector2
@@ -34,7 +35,11 @@ func _process(_delta):
 		if not current_line:
 			pass
 		else:
-			current_line.set_point_position(1, get_viewport().get_mouse_position())
+			if start.distance_to(get_viewport().get_viewport().get_mouse_position()) < max_length:
+				end = get_viewport().get_mouse_position()
+				print(start.distance_to(end))
+			
+			current_line.set_point_position(1, end)
 		
 
 func _on_dot_end_connection(position):
@@ -46,6 +51,5 @@ func _on_dot_start_connection(position):
 	current_line = Line2D.new()
 	add_child(current_line)
 	start = position
-	end = position
-	current_line.points= PackedVector2Array([start,end])
+	current_line.points= PackedVector2Array([start,start])
 	
