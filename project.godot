@@ -31,3 +31,7 @@ click={
 "deadzone": 0.5,
 "events": []
 }
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.128326, 0.374967, 0.752558, 1)

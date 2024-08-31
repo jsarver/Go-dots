@@ -1,18 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdbkjauenkwog"]
+[gd_scene load_steps=6 format=3 uid="uid://cdbkjauenkwog"]
 
+[ext_resource type="Shader" path="res://dot.gdshader" id="1_566hd"]
 [ext_resource type="Script" path="res://dot.gd" id="1_gnt4f"]
+[ext_resource type="Texture2D" uid="uid://b5377cfltjkq1" path="res://assets/dot-64.svg" id="1_gnt05"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_aascb"]
-
-[sub_resource type="MeshTexture" id="MeshTexture_xufj8"]
-mesh = SubResource("SphereMesh_aascb")
-image_size = Vector2(48, 48)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vho70"]
+resource_local_to_scene = true
+shader = ExtResource("1_566hd")
+shader_parameter/new_color = Color(1, 1, 1, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cqd08"]
-radius = 193.912
+radius = 30.0
 
 [node name="dot" type="Sprite2D"]
-texture = SubResource("MeshTexture_xufj8")
+material = SubResource("ShaderMaterial_vho70")
+use_parent_material = true
+scale = Vector2(0.78169, 0.78169)
+texture = ExtResource("1_gnt05")
 script = ExtResource("1_gnt4f")
 
 [node name="Area2D" type="Area2D" parent="."]

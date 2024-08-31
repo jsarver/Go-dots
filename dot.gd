@@ -12,14 +12,17 @@ var color : Color:
 	
 signal start_connection (start_position)
 signal end_connection (end_position)
-#
+
+func update_color():
+	material.set_shader_parameter("new_color", color)
+
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-	
+		print('click')
 		if is_pixel_opaque(get_local_mouse_position()):
 			start_connection.emit(self.position)
 			self.state = 'active'
-			queue_redraw()
+			update_color()
 			
 	if event is InputEventMouseButton and event.is_released() and event.button_index == MOUSE_BUTTON_LEFT:
 		
@@ -27,9 +30,9 @@ func _input(event):
 			#print('emitting!',self.position)
 			end_connection.emit(self.position)
 			state = 'active'
-			queue_redraw()
+			update_color()
 
 func _draw():
 	#print('drawing')
-	draw_circle(Vector2(current_position), 29.3905, color)
-
+	#draw_circle(Vector2(current_position), 29.3905, color)
+	pass
