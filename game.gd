@@ -12,10 +12,7 @@ var current_line : Line2D
 var start : Vector2
 var end : Vector2
 #
-#func setup_game():
-	#for "res://dot.tscn"
-# Called when the node enters the scene tree for the first time.
-func _ready():
+func setup_game():
 	var x_pos = dot_distance
 	var y_pos = dot_distance
 	for c in range(columns):
@@ -30,6 +27,9 @@ func _ready():
 		x_pos += dot_distance
 		y_pos = dot_distance
 
+func _ready():
+	setup_game()
+	
 func _process(_delta):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if not current_line:
