@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c76oikpeumlwq"]
+[gd_scene load_steps=10 format=3 uid="uid://c76oikpeumlwq"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_kpjse"]
 [ext_resource type="PackedScene" uid="uid://5qx5omiil4hm" path="res://connector.tscn" id="2_om43p"]
@@ -6,6 +6,8 @@
 [ext_resource type="Shader" path="res://dot.gdshader" id="4_8m1tl"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="4_mja6a"]
 [ext_resource type="Script" path="res://Label.gd" id="5_2mcjc"]
+[ext_resource type="PackedScene" uid="uid://b8ix031wt81t" path="res://line.tscn" id="7_x836e"]
+[ext_resource type="PackedScene" uid="uid://c6820pnplkb8d" path="res://square.tscn" id="8_v8aly"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6gedx"]
 resource_local_to_scene = true
@@ -18,9 +20,7 @@ columns = 48
 rows = 48
 dot_distance = 100.0
 
-[node name="Connector" parent="." instance=ExtResource("2_om43p")]
-
-[node name="Node2D" parent="Connector" instance=ExtResource("2_om43p")]
+[node name="line" parent="." instance=ExtResource("7_x836e")]
 
 [node name="dot" parent="." instance=ExtResource("3_k8yck")]
 visible = false
@@ -30,6 +30,8 @@ position = Vector2(-219.369, 24.3543)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 542)
 script = ExtResource("4_mja6a")
+
+[node name="Connector" parent="." instance=ExtResource("2_om43p")]
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 24.0
@@ -47,3 +49,6 @@ offset_bottom = 45.0
 text = "test	"
 script = ExtResource("5_2mcjc")
 event_name = "Mouse Wheel Down"
+
+[node name="Square" parent="." instance=ExtResource("8_v8aly")]
+position = Vector2(143, 13)

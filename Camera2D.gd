@@ -6,7 +6,7 @@ extends Camera2D
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_WHEEL_UP:
-		print(event.button_index)
+		#print(event.button_index)
 		
 		zoom[0] += .2
 		zoom[1] += .2

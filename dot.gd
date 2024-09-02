@@ -18,7 +18,7 @@ func update_color():
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		print('click')
+
 		if is_pixel_opaque(get_local_mouse_position()):
 			start_connection.emit(self.position)
 			self.state = 'active'
