@@ -10,12 +10,11 @@ shader = ExtResource("1_566hd")
 shader_parameter/new_color = Color(1, 1, 1, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cqd08"]
-radius = 30.0
+radius = 32.0
 
 [node name="dot" type="Sprite2D"]
 material = SubResource("ShaderMaterial_vho70")
 use_parent_material = true
-scale = Vector2(0.78169, 0.78169)
 texture = ExtResource("1_gnt05")
 script = ExtResource("1_gnt4f")
 

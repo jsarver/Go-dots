@@ -3,8 +3,7 @@
 [ext_resource type="Script" path="res://line.gd" id="1_fsjoe"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8icco"]
-a = Vector2(100, 100)
-b = Vector2(200, 300)
+b = Vector2(0, 0)
 
 [node name="line" type="Node2D"]
 script = ExtResource("1_fsjoe")
@@ -12,10 +11,10 @@ script = ExtResource("1_fsjoe")
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 0, 0)
 
-[node name="Area2D" type="Area2D" parent="Line2D"]
+[node name="Line2D" type="Area2D" parent="Line2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Line2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Line2D/Line2D"]
 position = Vector2(1, -1)
 shape = SubResource("SegmentShape2D_8icco")
 
-[connection signal="body_entered" from="Line2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Line2D/Line2D" to="." method="_on_area_2d_body_entered"]

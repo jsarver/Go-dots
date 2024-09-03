@@ -1,6 +1,6 @@
 extends Node2D
 @onready var line :Line2D = $Line2D
-@onready var collision_shape :CollisionShape2D = get_node('Line2D/Area2D/CollisionShape2D')
+@onready var collision_shape :CollisionShape2D = get_node('Line2D/Line2D/CollisionShape2D')
 
 func _ready():
 	var segment = SegmentShape2D.new()

@@ -8,7 +8,6 @@ var start: Vector2
 var end: Vector2
 var current_line : Node2D
 
-
 func _process(_delta):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if not current_line:
