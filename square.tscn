@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6820pnplkb8d"]
+[gd_scene load_steps=5 format=3 uid="uid://c6820pnplkb8d"]
 
 [ext_resource type="Texture2D" uid="uid://b36n4y0ccwwqu" path="res://assets/dot-128.svg" id="1_ionxn"]
 [ext_resource type="Script" path="res://Square.gd" id="2_f1ypk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8udk"]
-size = Vector2(128, 128)
+size = Vector2(144, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hfkd"]
+size = Vector2(112, 144)
 
 [node name="Square" type="Sprite2D"]
 visible = false
@@ -17,6 +20,8 @@ script = ExtResource("2_f1ypk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_l8udk")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_3hfkd")
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

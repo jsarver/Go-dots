@@ -7,7 +7,6 @@ extends Node
 @export var columns :int 
 @export var rows : int 
 @export var dot_distance:float = 150
-@onready var max_length = dot_distance
 var current_line : Line2D
 var start : Vector2
 var end : Vector2
@@ -57,5 +56,3 @@ func setup_game():
 func _ready():
 	setup_game()
 	
-
-								

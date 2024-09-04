@@ -1,5 +1,5 @@
 extends Node2D
-@export var max_length:float = 150
+@export var max_length:float = 300
 var dotline = preload('line.tscn')
 var point1 : Vector2 = Vector2(0, 0)
 var width : int = 10
