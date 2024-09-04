@@ -31,8 +31,3 @@ func _input(event):
 			end_connection.emit(self.position)
 			state = 'active'
 			update_color()
-
-func _draw():
-	#print('drawing')
-	#draw_circle(Vector2(current_position), 29.3905, color)
-	pass
