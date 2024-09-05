@@ -12,24 +12,24 @@ rows = 6
 dot_distance = 128.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(960, 536)
+position = Vector2(632, 416)
 script = ExtResource("4_mja6a")
 
 [node name="Connector" parent="." instance=ExtResource("2_om43p")]
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 32.0
-offset_top = -64.0
-offset_right = 184.0
-offset_bottom = -21.0
+offset_left = 992.0
+offset_top = 120.0
+offset_right = 1144.0
+offset_bottom = 163.0
 text = "test	"
 script = ExtResource("5_2mcjc")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 224.0
-offset_top = -72.0
-offset_right = 376.0
-offset_bottom = -29.0
+offset_left = 976.0
+offset_top = 24.0
+offset_right = 1128.0
+offset_bottom = 67.0
 text = "test	"
 script = ExtResource("5_2mcjc")
 event_name = "Mouse Wheel Down"

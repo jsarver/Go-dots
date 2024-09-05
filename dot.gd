@@ -31,3 +31,5 @@ func _input(event):
 			end_connection.emit(self.position)
 			state = 'active'
 			update_color()
+		
+			
