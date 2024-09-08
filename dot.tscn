@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdbkjauenkwog"]
+[gd_scene load_steps=6 format=3 uid="uid://cdbkjauenkwog"]
 
 [ext_resource type="Shader" path="res://dot.gdshader" id="1_566hd"]
 [ext_resource type="Script" path="res://dot.gd" id="1_gnt4f"]
 [ext_resource type="Texture2D" uid="uid://b5377cfltjkq1" path="res://assets/dot-64.svg" id="1_gnt05"]
-[ext_resource type="Script" path="res://dotArea2D.gd" id="4_1qxkc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vho70"]
 resource_local_to_scene = true
@@ -20,7 +19,6 @@ texture = ExtResource("1_gnt05")
 script = ExtResource("1_gnt4f")
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("4_1qxkc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_cqd08")

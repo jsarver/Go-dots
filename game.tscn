@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c76oikpeumlwq"]
+[gd_scene load_steps=8 format=3 uid="uid://c76oikpeumlwq"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_kpjse"]
 [ext_resource type="PackedScene" uid="uid://5qx5omiil4hm" path="res://connector.tscn" id="2_om43p"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="4_mja6a"]
+[ext_resource type="Script" path="res://NewGameButton.gd" id="5_0s7xr"]
 [ext_resource type="Script" path="res://Label.gd" id="5_2mcjc"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_lk6uk"]
+action = &"start_game"
+
+[sub_resource type="Shortcut" id="Shortcut_dkfg3"]
+events = [SubResource("InputEventAction_lk6uk")]
 
 [node name="main" type="Node"]
 script = ExtResource("1_kpjse")
@@ -33,3 +40,20 @@ offset_bottom = 67.0
 text = "test	"
 script = ExtResource("5_2mcjc")
 event_name = "Mouse Wheel Down"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 448.0
+offset_top = 392.0
+offset_right = 456.0
+offset_bottom = 400.0
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="NewGameButton" type="Button" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+shortcut = SubResource("Shortcut_dkfg3")
+text = "New Game"
+script = ExtResource("5_0s7xr")
+
+[connection signal="button_up" from="MarginContainer/GridContainer/NewGameButton" to="MarginContainer/GridContainer/NewGameButton" method="_on_button_up"]

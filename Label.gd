@@ -1,7 +1,6 @@
 extends Label
 @export var event_name : String
-
-func _input(event):
-	if event.is_pressed():
-		text = event.as_text()
+#
+#func _process(_delta):
+	#text = str(get_viewport().get_mouse_position())
 	

@@ -54,5 +54,6 @@ func setup_game():
 		y_pos += dot_distance
 
 func _ready():
-	setup_game()
+	#setup_game()
+	pass
 	
