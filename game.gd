@@ -2,8 +2,8 @@ extends Node
 @onready var dot = preload("res://dot.tscn")
 @onready var square = preload("res://square.tscn")
 @onready var connection = get_node('Connector')
-@export var columns :int 
-@export var rows : int 
+@export var default_columns :int 
+@export var default_rows : int 
 @export var dot_distance:float = 150
 
 
@@ -31,7 +31,7 @@ func add_row(item_type: String, item_count: int,start_position: Vector2, x_offse
 		start_position.x += x_offset
 		
 
-func setup_game():
+func setup_game(columns, rows):
 	var x_pos = dot_distance
 	var y_pos = dot_distance
 	for row in range(rows):

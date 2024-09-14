@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c76oikpeumlwq"]
+[gd_scene load_steps=13 format=3 uid="uid://c76oikpeumlwq"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_kpjse"]
 [ext_resource type="PackedScene" uid="uid://5qx5omiil4hm" path="res://connector.tscn" id="2_om43p"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" path="res://Label.gd" id="5_2mcjc"]
 [ext_resource type="Theme" uid="uid://dm0adeky8pg3m" path="res://game_theme.tres" id="5_8j2ep"]
 [ext_resource type="Script" path="res://ExitGameButton.gd" id="6_whmyo"]
+[ext_resource type="Script" path="res://SmallGameButton.gd" id="8_cb23o"]
+[ext_resource type="Script" path="res://MediumGameButton.gd" id="9_w47s3"]
+[ext_resource type="Script" path="res://LargeGameButton.gd" id="10_gcc5o"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_lk6uk"]
 action = &"start_game"
@@ -16,8 +19,6 @@ events = [SubResource("InputEventAction_lk6uk")]
 
 [node name="main" type="Node"]
 script = ExtResource("1_kpjse")
-columns = 6
-rows = 6
 dot_distance = 128.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -35,10 +36,10 @@ text = "test	"
 script = ExtResource("5_2mcjc")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 976.0
-offset_top = 24.0
-offset_right = 1128.0
-offset_bottom = 67.0
+offset_left = 984.0
+offset_top = -8.0
+offset_right = 1136.0
+offset_bottom = 35.0
 text = "test	"
 script = ExtResource("5_2mcjc")
 event_name = "Mouse Wheel Down"
@@ -49,23 +50,45 @@ offset_top = 392.0
 offset_right = 456.0
 offset_bottom = 400.0
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+[node name="MainMenu" type="GridContainer" parent="MarginContainer"]
 layout_mode = 2
 theme = ExtResource("5_8j2ep")
 
-[node name="NewGameButton" type="Button" parent="MarginContainer/GridContainer"]
+[node name="NewGameButton" type="Button" parent="MarginContainer/MainMenu"]
 layout_mode = 2
 theme = ExtResource("5_8j2ep")
 shortcut = SubResource("Shortcut_dkfg3")
 text = "New Game"
 script = ExtResource("5_0s7xr")
 
-[node name="ExitGameButton" type="Button" parent="MarginContainer/GridContainer"]
+[node name="ExitGameButton" type="Button" parent="MarginContainer/MainMenu"]
 layout_mode = 2
 theme = ExtResource("5_8j2ep")
 shortcut = SubResource("Shortcut_dkfg3")
 text = "Exit Game"
 script = ExtResource("6_whmyo")
 
-[connection signal="button_up" from="MarginContainer/GridContainer/NewGameButton" to="MarginContainer/GridContainer/NewGameButton" method="_on_button_up"]
-[connection signal="button_up" from="MarginContainer/GridContainer/ExitGameButton" to="MarginContainer/GridContainer/ExitGameButton" method="_exit_game"]
+[node name="GameOptions" type="GridContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="SmallGameButton" type="Button" parent="MarginContainer/GameOptions"]
+layout_mode = 2
+text = "SMALL"
+script = ExtResource("8_cb23o")
+
+[node name="MediumGameButton" type="Button" parent="MarginContainer/GameOptions"]
+layout_mode = 2
+text = "MEDIUM"
+script = ExtResource("9_w47s3")
+
+[node name="LargeGameButton" type="Button" parent="MarginContainer/GameOptions"]
+layout_mode = 2
+text = "LARGE"
+script = ExtResource("10_gcc5o")
+
+[connection signal="button_up" from="MarginContainer/MainMenu/NewGameButton" to="MarginContainer/MainMenu/NewGameButton" method="_on_button_up"]
+[connection signal="button_up" from="MarginContainer/MainMenu/ExitGameButton" to="MarginContainer/MainMenu/ExitGameButton" method="_exit_game"]
+[connection signal="button_up" from="MarginContainer/GameOptions/SmallGameButton" to="MarginContainer/GameOptions/SmallGameButton" method="_on_button_up"]
+[connection signal="button_up" from="MarginContainer/GameOptions/MediumGameButton" to="MarginContainer/GameOptions/MediumGameButton" method="_on_button_up"]
+[connection signal="button_up" from="MarginContainer/GameOptions/LargeGameButton" to="MarginContainer/GameOptions/LargeGameButton" method="_on_button_up"]
