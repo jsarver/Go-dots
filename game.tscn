@@ -1,35 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://c76oikpeumlwq"]
+[gd_scene load_steps=6 format=3 uid="uid://c76oikpeumlwq"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_kpjse"]
 [ext_resource type="PackedScene" uid="uid://5qx5omiil4hm" path="res://connector.tscn" id="2_om43p"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="4_mja6a"]
 [ext_resource type="Script" path="res://Label.gd" id="5_2mcjc"]
+[ext_resource type="PackedScene" uid="uid://b3jpfh640p7k7" path="res://MainMenu.tscn" id="5_4q0qw"]
 
-[node name="main" type="Node"]
+[node name="game" type="Node"]
 script = ExtResource("1_kpjse")
 dot_distance = 128.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(632, 416)
+position = Vector2(16, 8)
 script = ExtResource("4_mja6a")
 
 [node name="Connector" parent="." instance=ExtResource("2_om43p")]
 
 [node name="Label2" type="Label" parent="."]
-visible = false
-offset_left = 992.0
-offset_top = 120.0
-offset_right = 1144.0
-offset_bottom = 163.0
+offset_left = 464.0
+offset_top = -32.0
+offset_right = 616.0
+offset_bottom = 11.0
 text = "test	"
 script = ExtResource("5_2mcjc")
 
 [node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 984.0
-offset_top = -8.0
-offset_right = 1136.0
-offset_bottom = 35.0
+offset_left = 448.0
+offset_top = 24.0
+offset_right = 600.0
+offset_bottom = 67.0
 text = "test	"
 script = ExtResource("5_2mcjc")
 event_name = "Mouse Wheel Down"
+
+[node name="Menu" parent="." instance=ExtResource("5_4q0qw")]
+anchors_preset = -1
+anchor_left = 0.004
+anchor_top = 0.022
+anchor_right = 0.004
+anchor_bottom = 0.022
+offset_left = 16.32
+offset_top = 8.24
+offset_right = 16.32
+offset_bottom = 8.24

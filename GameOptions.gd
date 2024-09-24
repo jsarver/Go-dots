@@ -1,9 +1,10 @@
-extends GridContainer
-@onready var g = get_node('/root/Globals')
+extends VBoxContainer
+
+#signal start_game
 
 func start_game():
-	get_tree().change_scene_to_file("res://game.tscn")
-
+	var g = get_node('/root/game')
+	g.setup_game(Globals.rows,Globals.columns)
 func _on_small_button_up() -> void:
 	Globals.columns = 4
 	Globals.rows = 4

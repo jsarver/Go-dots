@@ -31,7 +31,7 @@ func _on_dot_end_connection(position):
 
 
 func _on_dot_start_connection(position):
-	var l = get_node('/root/main/Label2')
+	var l = get_node('/root/game/Label2')
 	l.text = str(position)
 	current_line = dotline.instantiate()
 	start = position

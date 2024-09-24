@@ -5,9 +5,8 @@ extends Node
 @export var default_columns :int 
 @export var default_rows : int 
 @export var dot_distance:float = 150
+signal game_start
 
-func _ready() -> void:
-	setup_game(Globals.columns, Globals.rows)
 
 func create_square(square_position: Vector2):
 	var square_instance = square.instantiate()
@@ -41,5 +40,6 @@ func setup_game(columns, rows):
 		add_row('dot',columns, Vector2(x_pos,y_pos),dot_distance)
 		add_row('square',columns-1, Vector2((x_pos+64),(y_pos+64)),dot_distance)
 		y_pos += dot_distance
+	Globals.start_game()
 
 

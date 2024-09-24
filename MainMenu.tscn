@@ -12,52 +12,59 @@ action = &"start_game"
 [sub_resource type="Shortcut" id="Shortcut_dkfg3"]
 events = [SubResource("InputEventAction_lk6uk")]
 
-[node name="Menu" type="Node2D"]
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-offset_left = 448.0
-offset_top = 392.0
-offset_right = 456.0
-offset_bottom = 400.0
-
-[node name="MainMenu" type="GridContainer" parent="MarginContainer"]
-layout_mode = 2
-theme = ExtResource("1_l8dpp")
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 568.0
+offset_top = 272.0
+offset_right = 568.0
+offset_bottom = 272.0
 script = ExtResource("2_iqv12")
 
-[node name="NewGameButton" type="Button" parent="MarginContainer/MainMenu"]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = -440.0
+offset_top = -200.0
+offset_right = -136.0
+offset_bottom = 72.0
+
+[node name="MainMenu" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme = ExtResource("1_l8dpp")
+
+[node name="NewGameButton" type="Button" parent="PanelContainer/MainMenu"]
 layout_mode = 2
 theme = ExtResource("1_l8dpp")
 shortcut = SubResource("Shortcut_dkfg3")
 text = "New Game"
 script = ExtResource("3_g3xj8")
 
-[node name="ExitGameButton" type="Button" parent="MarginContainer/MainMenu"]
+[node name="ExitGameButton" type="Button" parent="PanelContainer/MainMenu"]
 layout_mode = 2
 theme = ExtResource("1_l8dpp")
 shortcut = SubResource("Shortcut_dkfg3")
 text = "Exit Game"
 script = ExtResource("4_6akcl")
 
-[node name="GameOptions" type="GridContainer" parent="MarginContainer"]
+[node name="GameOptions" type="VBoxContainer" parent="PanelContainer"]
 visible = false
 layout_mode = 2
 script = ExtResource("5_6lpq3")
 
-[node name="SmallGameButton" type="Button" parent="MarginContainer/GameOptions"]
+[node name="SmallGameButton" type="Button" parent="PanelContainer/GameOptions"]
 layout_mode = 2
 text = "SMALL"
 
-[node name="MediumGameButton" type="Button" parent="MarginContainer/GameOptions"]
+[node name="MediumGameButton" type="Button" parent="PanelContainer/GameOptions"]
 layout_mode = 2
 text = "MEDIUM"
 
-[node name="LargeGameButton" type="Button" parent="MarginContainer/GameOptions"]
+[node name="LargeGameButton" type="Button" parent="PanelContainer/GameOptions"]
 layout_mode = 2
 text = "LARGE"
 
-[connection signal="button_up" from="MarginContainer/MainMenu/NewGameButton" to="MarginContainer/MainMenu/NewGameButton" method="_on_button_up"]
-[connection signal="button_up" from="MarginContainer/MainMenu/ExitGameButton" to="MarginContainer/MainMenu/ExitGameButton" method="_exit_game"]
-[connection signal="button_up" from="MarginContainer/GameOptions/SmallGameButton" to="MarginContainer/GameOptions" method="_on_small_button_up"]
-[connection signal="button_up" from="MarginContainer/GameOptions/MediumGameButton" to="MarginContainer/GameOptions" method="_on_medium_button_up"]
-[connection signal="button_up" from="MarginContainer/GameOptions/LargeGameButton" to="MarginContainer/GameOptions" method="_on_large_button_up"]
+[connection signal="button_up" from="PanelContainer/MainMenu/NewGameButton" to="PanelContainer/MainMenu/NewGameButton" method="_on_button_up"]
+[connection signal="button_up" from="PanelContainer/MainMenu/ExitGameButton" to="PanelContainer/MainMenu/ExitGameButton" method="_exit_game"]
+[connection signal="button_up" from="PanelContainer/GameOptions/SmallGameButton" to="PanelContainer/GameOptions" method="_on_small_button_up"]
+[connection signal="button_up" from="PanelContainer/GameOptions/MediumGameButton" to="PanelContainer/GameOptions" method="_on_medium_button_up"]
+[connection signal="button_up" from="PanelContainer/GameOptions/LargeGameButton" to="PanelContainer/GameOptions" method="_on_large_button_up"]

@@ -1,6 +1,7 @@
 extends Label
 @export var event_name : String
-#
-#func _process(_delta):
-	#text = str(get_viewport().get_mouse_position())
+@onready var menu = get_node('/root/game/Menu/PanelContainer')
+
+func _process(_delta):
+	text = str(menu.position)
 	
