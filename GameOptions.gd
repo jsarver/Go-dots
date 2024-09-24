@@ -5,6 +5,7 @@ extends VBoxContainer
 func start_game():
 	var g = get_node('/root/game')
 	g.setup_game(Globals.rows,Globals.columns)
+	hide()
 func _on_small_button_up() -> void:
 	Globals.columns = 4
 	Globals.rows = 4

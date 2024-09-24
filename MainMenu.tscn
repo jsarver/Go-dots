@@ -13,12 +13,13 @@ action = &"start_game"
 events = [SubResource("InputEventAction_lk6uk")]
 
 [node name="Menu" type="Control"]
+z_index = 2
 layout_mode = 3
 anchors_preset = 0
 offset_left = 568.0
-offset_top = 272.0
+offset_top = 264.0
 offset_right = 568.0
-offset_bottom = 272.0
+offset_bottom = 264.0
 script = ExtResource("2_iqv12")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

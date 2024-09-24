@@ -11,7 +11,7 @@ script = ExtResource("1_kpjse")
 dot_distance = 128.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(16, 8)
+position = Vector2(440, 272)
 script = ExtResource("4_mja6a")
 
 [node name="Connector" parent="." instance=ExtResource("2_om43p")]
@@ -39,7 +39,7 @@ anchor_left = 0.004
 anchor_top = 0.022
 anchor_right = 0.004
 anchor_bottom = 0.022
-offset_left = 16.32
-offset_top = 8.24
-offset_right = 16.32
-offset_bottom = 8.24
+offset_left = 432.32
+offset_top = 184.24
+offset_right = 432.32
+offset_bottom = 184.24

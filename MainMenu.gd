@@ -1,14 +1,13 @@
 extends Control
 
+func toggle_menu():
+	var menu = get_node("PanelContainer/MainMenu")
+	menu.visible = !menu.visible
+	visible = !visible
+	print('toggle')
+	
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("OpenMenu") :
 		if Globals.game_started:
-			var scene_name = get_tree().current_scene.name
-			print(scene_name)
-
-			if scene_name == 'game':
-				
-				show()
-			
-			if scene_name == 'Menu':
-				hide()
+			toggle_menu()
