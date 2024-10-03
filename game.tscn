@@ -34,12 +34,13 @@ script = ExtResource("5_2mcjc")
 event_name = "Mouse Wheel Down"
 
 [node name="Menu" parent="." instance=ExtResource("5_4q0qw")]
+z_index = 1
 anchors_preset = -1
 anchor_left = 0.004
 anchor_top = 0.022
 anchor_right = 0.004
 anchor_bottom = 0.022
-offset_left = 432.32
-offset_top = 184.24
-offset_right = 432.32
-offset_bottom = 184.24
+offset_left = 688.32
+offset_top = 368.24
+offset_right = 688.32
+offset_bottom = 368.24
